@@ -1,0 +1,4 @@
+<resources>
+    <string name="hello">Hello World, Sudoku</string>
+    <string name="app_name">Sudoku</string>
+</resources>
