@@ -1,7 +1,9 @@
 package com.skosenko.sudoku;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,7 +24,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         //start game
-        startGame(1);
+        openNewGameDialog();
+    }
+
+    private void openNewGameDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.new_game_title)
+                .setItems(R.array.difficulty,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialoginterface,
+                                                int i) {
+                                startGame(i);
+                            }
+                        })
+                .show();
     }
 
     private void startGame(int i) {
