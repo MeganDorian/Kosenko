@@ -1,4 +1,4 @@
-package com.skosenko.sudoku;
+package com.skosenko.sudoku.fragments;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.skosenko.sudoku.R;
 
 import java.util.ArrayList;
 
@@ -61,9 +63,13 @@ private int groupId;
         int textViews[] = new int[]{R.id.textView1, R.id.textView2, R.id.textView3, R.id.textView4,
                 R.id.textView5, R.id.textView6, R.id.textView7, R.id.textView8, R.id.textView9};
         TextView currentView = view.findViewById(textViews[position]);
-        currentView.setText(String.valueOf(value));
-        currentView.setTextColor(Color.BLACK);
-        currentView.setTypeface(null, Typeface.BOLD);
+        if(value!=0) {
+            currentView.setText(String.valueOf(value));
+            currentView.setTextColor(Color.BLACK);
+            currentView.setTypeface(null, Typeface.BOLD);
+        } else {
+            currentView.setText("");
+        }
     }
 
     public boolean checkGroupCorrect() {
