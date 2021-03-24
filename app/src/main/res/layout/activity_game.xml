@@ -20,21 +20,21 @@
             android:layout_height="match_parent">
             <fragment
                 android:id="@+id/cellFragment"
-                android:name="com.skosenko.sudoku.CellFragment"
+                android:name="com.skosenko.sudoku.fragments.CellFragment"
                 android:layout_width="92dp"
                 android:layout_height="106dp"
                 android:tag="0"
                 android:layout_weight="1" />
             <fragment
                 android:id="@+id/cellFragment2"
-                android:name="com.skosenko.sudoku.CellFragment"
+                android:name="com.skosenko.sudoku.fragments.CellFragment"
                 android:layout_width="92dp"
                 android:layout_height="106dp"
                 android:tag="1"
                 android:layout_weight="1" />
             <fragment
                 android:id="@+id/cellFragment3"
-                android:name="com.skosenko.sudoku.CellFragment"
+                android:name="com.skosenko.sudoku.fragments.CellFragment"
                 android:layout_width="92dp"
                 android:layout_height="106dp"
                 android:tag="2"
@@ -45,21 +45,21 @@
             android:layout_height="match_parent">
             <fragment
                 android:id="@+id/cellFragment4"
-                android:name="com.skosenko.sudoku.CellFragment"
+                android:name="com.skosenko.sudoku.fragments.CellFragment"
                 android:layout_width="92dp"
                 android:layout_height="106dp"
                 android:tag="3"
                 android:layout_weight="1" />
             <fragment
                 android:id="@+id/cellFragment5"
-                android:name="com.skosenko.sudoku.CellFragment"
+                android:name="com.skosenko.sudoku.fragments.CellFragment"
                 android:layout_width="92dp"
                 android:layout_height="106dp"
                 android:tag="4"
                 android:layout_weight="1" />
             <fragment
                 android:id="@+id/cellFragment6"
-                android:name="com.skosenko.sudoku.CellFragment"
+                android:name="com.skosenko.sudoku.fragments.CellFragment"
                 android:layout_width="92dp"
                 android:layout_height="106dp"
                 android:tag="5"
@@ -70,21 +70,21 @@
             android:layout_height="117dp">
             <fragment
                 android:id="@+id/cellFragment7"
-                android:name="com.skosenko.sudoku.CellFragment"
+                android:name="com.skosenko.sudoku.fragments.CellFragment"
                 android:layout_width="92dp"
                 android:layout_height="106dp"
                 android:tag="6"
                 android:layout_weight="1" />
             <fragment
                 android:id="@+id/cellFragment8"
-                android:name="com.skosenko.sudoku.CellFragment"
+                android:name="com.skosenko.sudoku.fragments.CellFragment"
                 android:layout_width="92dp"
                 android:layout_height="106dp"
                 android:tag="7"
                 android:layout_weight="1" />
             <fragment
                 android:id="@+id/cellFragment9"
-                android:name="com.skosenko.sudoku.CellFragment"
+                android:name="com.skosenko.sudoku.fragments.CellFragment"
                 android:layout_width="92dp"
                 android:layout_height="106dp"
                 android:tag="8"
@@ -94,7 +94,7 @@
     </TableLayout>
 
     <fragment
-        android:name="com.skosenko.sudoku.Numbers"
+        android:name="com.skosenko.sudoku.fragments.Numbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/numbers" />
@@ -112,7 +112,7 @@
         app:layout_constraintVertical_bias="0.965"
         android:layout_marginStart="16dp" />
 
-    <Button
+    <!--<Button
         android:id="@+id/buttonShowInstructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.965"
-        android:layout_marginStart="200dp" />
+        android:layout_marginStart="200dp" />-->
 
     <Button
         android:id="@+id/buttonCheckBoard"
@@ -137,6 +137,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.822"
-        android:layout_marginStart="180dp" />
+        android:layout_marginStart="16dp" />
 
 </LinearLayout>

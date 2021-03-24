@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/table_border_group"
-    tools:context=".CellFragment">
+    tools:context=".fragments.CellFragment">
 
     <TableRow
         android:layout_width="match_parent"
