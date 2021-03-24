@@ -17,14 +17,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        View continueButton = findViewById(R.id.continue_button);
+        continueButton.setOnClickListener(this);
         View newButton = findViewById(R.id.new_button);
         newButton.setOnClickListener(this);
+        View exitButton = findViewById(R.id.exit_button);
+        exitButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        //start game
-        openNewGameDialog();
+        switch (view.getId()) {
+            case R.id.continue_button:
+                startGame(Game.DIFFICULTY_CONTINUE);
+                break;
+            case R.id.new_button:
+                openNewGameDialog();
+                break;
+            case R.id.exit_button:
+                finish();
+                break;
+        }
     }
 
     private void openNewGameDialog() {
