@@ -35,7 +35,6 @@ public class Game extends AppCompatActivity implements CellFragment.OnFragmentIn
 
     public static final int DIFFICULTY_EASY = 0;
     public static final int DIFFICULTY_MEDIUM = 1;
-    public static final int DIFFICULTY_HARD = 2;
 
     public static final String KEY_DIFFICULTY = "org.example.sudoku.difficulty";
 
@@ -78,11 +77,13 @@ public class Game extends AppCompatActivity implements CellFragment.OnFragmentIn
                 }
             }
         }
+        Log.i(TAG, "Board created");
 
         getIntent().putExtra(KEY_DIFFICULTY, DIFFICULTY_CONTINUE);
     }
 
     private ArrayList<Board> readGameBoards(int difficulty) {
+        Log.i(TAG, "Reading board from file");
         ArrayList<Board> boards = new ArrayList<>();
         int fileId;
         if (difficulty == DIFFICULTY_MEDIUM) {
@@ -120,7 +121,7 @@ public class Game extends AppCompatActivity implements CellFragment.OnFragmentIn
         }
 
         //reading from internal storage (/data/data/<package-name>/files)
-        String fileName = "boards-";
+        String fileName = "boards-by-difficulty";
         if (difficulty == 0) {
             fileName += "easy";
         } else if (difficulty == 1) {
@@ -162,6 +163,7 @@ public class Game extends AppCompatActivity implements CellFragment.OnFragmentIn
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Log.i(TAG, "Board war read from file");
         return boards;
     }
 
@@ -189,6 +191,7 @@ public class Game extends AppCompatActivity implements CellFragment.OnFragmentIn
     }
 
     public void onCheckBoardButtonClicked(View view) {
+        Log.i(TAG, "Checking whether board is correct");
         currentBoard.isBoardCorrect();
         if(checkAllGroups() && currentBoard.isBoardCorrect()) {
             Toast.makeText(this, getString(R.string.board_correct), Toast.LENGTH_SHORT).show();
@@ -198,17 +201,19 @@ public class Game extends AppCompatActivity implements CellFragment.OnFragmentIn
     }
 
     public void onGoBackButtonClicked(View view) {
+        Log.i(TAG, "Closing sudoku...");
         finish();
     }
 
     public void onShowInstructionsButtonClicked(View view) {
-        Intent intent = new Intent("me.kirkhorn.knut.InstructionsActivity");
+        Intent intent = new Intent("InstructionsActivity");
         startActivity(intent);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.i(TAG, "Getting values from selected");
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == RESULT_OK) {
             int row = ((clickedGroup - 1) / 3) * 3 + (clickedCellId / 3);
