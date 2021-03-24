@@ -12,5 +12,10 @@
     <string name="game_title">Game</string>
     <string name="no_moves_label">No moves</string>
     <string name="keypad_title">Keypad</string>
+    <string name="continue_label">Continue</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="board_correct">Sudoku solved!</string>
+    <string name="board_incorrect">Sudoku is incorrect :c</string>
 
 </resources>
